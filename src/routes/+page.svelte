@@ -50,7 +50,7 @@
 
 <main>
     <div class="right">
-        <h1>Provide the details.</h1>
+        <h1>Provide the details</h1>
         <div class="name">
             <h3>Name</h3>
             <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" id="namesInput"/>
@@ -77,8 +77,8 @@
                 <tr>
                   <th>{name}</th>
                   <td>{numbers[index]}</td>
-                  <td><button class="btn btn-primary" on:click={() => edit(index)}>Edit</button></td>
-                  <td><button class="btn btn-ghost"on:click={() => deleteFunction(index)}>Delete</button></td>
+                  <td><button class="btn btn-primary" on:click={() => edit(index)}>EDIT</button></td>
+                  <td><button class="btn btn-ghost"on:click={() => deleteFunction(index)}>DELETE</button></td>
                 </tr>
                 {/each}
               </tbody>
@@ -105,9 +105,14 @@
     }
     h1{
         font-size: x-large;
-        color: white;
+        color: black;
         text-transform: uppercase;
-        
+        font-weight: bold;
+        padding-left: 35px;
+        padding-bottom: 5px;
+        background: #ebebeb;
+        width: 325px;
+        border-radius: 5px;
     }
     h3{
         color: white;
