@@ -94,8 +94,8 @@
         width: 100%;
     }
     .btn-primary{
-       width: 160px;
-       margin: 2px;
+       width: 140px;
+       margin: 10px;
     }
     th{
         color: white;
@@ -106,6 +106,8 @@
     h1{
         font-size: x-large;
         color: white;
+        text-transform: uppercase;
+        
     }
     h3{
         color: white;
@@ -126,6 +128,7 @@
     button{
         width: 140px;
         height: 10px;
+        color: white;
     }
     .left, .right {
         height: 100%;
