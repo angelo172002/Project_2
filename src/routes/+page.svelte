@@ -63,25 +63,43 @@
         <button class="btn btn-primary" on:click={update}>UPDATE</button>
     </div>
     <div class="left">
-        {#each names as name, index}
-        <div class="card w-96 bg-neutral text-neutral-content">
-            <div class="card-body items-center text-center">
-              <h2 class="card-title">{name}</h2>
-              <p>{numbers[index]}</p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary" on:click={() => edit(index)}>Edit</button>
-                <button class="btn btn-ghost"on:click={() => deleteFunction(index)}>Delete</button>
-              </div>
-            </div>
+        <div class="overflow-x-auto">
+            <table class="table">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                {#each names as name, index}
+                <tr>
+                  <th>{name}</th>
+                  <td>{numbers[index]}</td>
+                  <td><button class="btn btn-primary" on:click={() => edit(index)}>Edit</button></td>
+                  <td><button class="btn btn-ghost"on:click={() => deleteFunction(index)}>Delete</button></td>
+                </tr>
+                {/each}
+              </tbody>
+            </table>
           </div>
-          {/each}
     </div>
 </main>
 
 <style>
-     .text-neutral-content{
+    .overflow-x-auto{
         border: 1px solid white;
-     }
+        border-radius: 2px;
+        width: 100%;
+    }
+    .btn-primary{
+       width: 160px;
+       margin: 2px;
+    }
+    th{
+        color: white;
+    }
     .btn-ghost{
         border: 1px solid white;
     }
@@ -95,7 +113,7 @@
     }
     main {
         background: #24292E;
-        position: absolute;
+        position: fixed;
         padding: 100px;
         width: 100%;
         height: 100%;
@@ -106,12 +124,13 @@
         padding: 5px;
     }
     button{
-        width: 160px;
+        width: 140px;
+        height: 10px;
     }
     .left, .right {
         height: 100%;
         width: 100%;
-        padding: 130px;
+        padding: 130px  50px; 
     }
 
     .right {
